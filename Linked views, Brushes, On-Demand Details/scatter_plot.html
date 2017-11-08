@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Assignment3-part2</title>
+	<script type="text/javascript" src="d3/d3.js"></script>
+	<script type="text/javascript" src="scores.js"></script>
+	<style>
+	table, td, th{
+		text-align: center;
+		border: 1px solid black;
+		border-collapse: collapse;
+		width: 25%
+	}
+	circle.hidden {
+		fill: #ccc !important;
+	}
+	circle.highlight {
+		fill: yellow !important;
+	}
+	.box{
+		float:left;
+	}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>SATM</th>
+			<th>SATV</th>    
+			<th>ACT</th>
+			<th>GPA</th>
+		</tr>
+		<tr>
+			<td id ="satm">NULL</td>
+			<td id ="satv">NULL</td>    
+			<td id ="act">NULL</td>
+			<td id ="gpa">NULL</td>
+		</tr>
+		<script src="scatter_plot.js"></script>
+	</body>
+	</html>

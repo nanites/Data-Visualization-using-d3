@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <style>
+      #blue_bar_chart{
+        fill: blue;
+        stroke: black;
+        stroke-width: 2;  
+      }
+      
+      #red_bar_chart{
+        fill: red;
+        stroke: black;
+        stroke-width: 2;
+      }
+      #line_line_chart{
+        stroke: black;
+        stroke-width: 4;
+      }
+      #path_line_chart{
+        stroke: black;
+        stroke-width: 4;
+        fill: none;
+      }
+      #pie_chart{
+        stroke: black;
+        stroke-width: 4;
+        fill: none;
+      }
+      </style>
+    <meta charset="UTF-8"/>
+    <title>Assignment-2-Part-1</title>
+  </head>
+   <body>
+    <h4>1. Blue Bar Chart</h4>
+  	<svg id = "blue_bar_chart" width = "400" height = "400">
+      <rect x="0" y="150" width="50" height="150"></rect>
+      <rect x="50" y="75" width="50" height="225"></rect>
+      <rect x="100" y="75" width="50" height="225"></rect>
+      <rect x="150" y="0" width="50" height="300"></rect>
+      <rect x="200" y="0" width="50" height="300"></rect>
+      <rect x="250" y="75" width="50" height="225"></rect>
+      <rect x="300" y="75" width="50" height="225"></rect>
+      <rect x="350" y="150" width="50" height="150"></rect>
+   </svg>
+
+   <h4>2. Red Bar Chart</h4>
+    <svg id = "red_bar_chart" width = "400" height = "400">
+      <rect x="0" y="150" width="50" height="150"></rect>
+      <rect x="50" y="75" width="50" height="225"></rect>
+      <rect x="100" y="75" width="50" height="225"></rect>
+      <rect x="150" y="0" width="50" height="300"></rect>
+      <rect x="200" y="0" width="50" height="300"></rect>
+      <rect x="250" y="75" width="50" height="225"></rect>
+      <rect x="300" y="75" width="50" height="225"></rect>
+      <rect x="350" y="150" width="50" height="150"></rect>
+   </svg>
+
+   <h4>3. Line Line Chart</h4>
+    <svg id = "line_line_chart" width = "400" height = "400">
+         <line x1="0" y1="250" x2="50" y2="150"></line>
+         <line x1="50" y1="150" x2="100" y2="150"></line>
+         <line x1="100" y1="150" x2="150" y2="50"></line>
+         <line x1="150" y1="50" x2="200" y2="50"></line>
+         <line x1="200" y1="50" x2="250" y2="150"></line>
+         <line x1="250" y1="150" x2="300" y2="150"></line>
+         <line x1="300" y1="150" x2="350" y2="250"></line>
+   </svg>
+
+   <h4>4. Path Line Chart</h4>
+    <svg id = "path_line_chart" width = "400" height = "400">
+         <path d="M 0 250 L 50 150 L 100 150 L 150 50 L 200 50 L 250 150 L 300 150 L 350 250"/>
+   </svg>
+
+   <h4>5. Pie Chart</h4>
+    <svg id = "pie_chart" width = "400" height = "400">
+         <path d="M200,200 v-150 a150,150 0 0,1 150,150 z" fill="red"/>
+         <path d="M200,200 h150 a150,150 0 1,1 -150,-150 z"  fill="yellow"/>
+   </svg>
+
+  </body>
+</html>

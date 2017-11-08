@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Assignment3-part1</title>
+    <script type="text/javascript" src="d3/d3.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="scores.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+
+
+
+
+        function toHex(v) {
+            var str = "00" + Math.floor(Math.max(0, Math.min(255, v))).toString(16);
+            return str.substr(str.length-2);
+        }
+
+        function color(count) {
+                // count = 2500 -> #000000 (black)
+                // count = 0 -> #ffffff (cyan)
+
+                var amount = (2500 - count) / 2500 * 255;
+                var s = toHex(amount), s2 = toHex(amount / 2 + 127), s3 = toHex(amount / 2 + 127);
+                return "#" + s + s2 + s3;
+            }
+
+            var w = 600;
+            var h = 300;
+
+            function rgb(r, g, b)
+            {
+                return "#" + toHex(r * 255) + toHex(g * 255) + toHex(b * 255);
+            }
+            
+            var svg = d3.select("body")
+            .append("svg")
+            .attr("id", "chart1")
+            .attr("width", w)
+            .attr("height", h)
+
+            svg.selectAll("rect")
+            .data(ukDriverFatalities)
+            .enter()
+            .append("rect")
+            .attr("width", function(){return Math.ceil(600/(1984-1969+1));})
+            .attr("height", function(){return Math.ceil(300/12);})
+            .attr("x", function(d){return Math.ceil(600/(1984-1969+1))*(d.year-1969);})
+            .attr("y", function(d){return Math.ceil(300/12)*(11-d.month);})
+            .attr("fill", function(d){return color(d.count);})
+
+
+
+            var svg = d3.select("body")
+            .append("svg")
+            .attr("id", "chart2")
+            .attr("width", w)
+            .attr("height", h)
+
+            svg.selectAll("rect")
+            .data(ukDriverFatalities)
+            .enter()
+            .append("circle")
+            .attr("cx", function(d){return Math.ceil(600 / (1984 - 1969 + 1)) * (d.year - 1969 + 0.5);})
+            .attr("cy", function(d){return Math.ceil(300/12) * (11 - d.month + 0.5);})
+            .attr("r", function(d){return d.count/500*3})
+            .attr("stroke", function(){return "white"})
+            .attr("fill", function(){return "blue"})
+
+
+
+            var svg = d3.select("body")
+            .append("svg")
+            .attr("id", "chart3")
+            .attr("width", w)
+            .attr("height", h)
+
+            svg.selectAll("rect")
+            .data(ukDriverFatalities)
+            .enter()
+            .append("rect")
+            .attr("width", function(d){return Math.ceil(600/ukDriverFatalities.length)})
+            .attr("height", function(d){return d.count/2500*300;})
+            .attr("x", function(d, i){return i*600/ukDriverFatalities.length})
+            .attr("y", function(d, i){return 300 - (d.count/2500*300)})
+
+
+            var w = 500;
+            var h = 500;
+
+            var svg = d3.select("body")
+            .append("svg")
+            .attr("id", "scatterplot_1")
+            .attr("width", w)
+            .attr("height", h)
+
+            svg.selectAll("circle")
+            .data(scores)
+            .enter()
+            .append("circle")
+            .attr("cx", function(row){return (row.SATM/800)*400;})
+            .attr("cy", function(row){return 500 - (row.SATV/800)*400;})
+            .attr("r", function(row){return (row.ACT/35)*10;})
+            .attr("fill", function(row){return rgb(row.GPA/4,row.GPA/6,row.GPA/4);})
+
+
+
+
+
+
+        </script>
+    </body>
+    </html>
